@@ -9,17 +9,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<base href="<%=basePath%>">
     <meta charset="UTF-8">
     <title>房屋租赁系统</title>
-    <link rel="stylesheet" type="text/css" href="/text2/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/text2/css/main.css"/>
-    <script type="text/javascript" src="/text2/js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="/text2/js/libs/modernizr.min.js"></script>
-	</script>
-	<style type="text/css">
-	
-	
-	</style>
+	<link rel="shortcut icon" href="https://gitee.com/EtherealSymbol/drawing-bed/raw/master/house_lease_sys/favicon.ico"  type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/libs/modernizr.min.js"></script>
 	
 </head>
 <body>
@@ -28,10 +25,8 @@
 </div>
 
 <div>
-	<form id="houseForm" name="houseForm"
-		action="houselist.action"
-		method=post >
-						 <div class="result-title">
+	<form id="houseForm" name="houseForm" action="houselist.action" method=post >
+		<div class="result-title">
                     <div class="result-list">
                       
                         
@@ -68,11 +63,11 @@
 										<td>${apply.userlist.phone}</td>
 										<td>
 										<a class="link-update"
-											href="/text2/zulist/toaddhetong.action?house_id=${apply.house_id}">同意租赁</a>
+											href="zulist/toaddhetong.action?house_id=${apply.house_id}">同意租赁</a>
 											&nbsp;&nbsp; 
 											<input type="hidden" name="id" value="${houselist.id}"/>
 											<a class="link-del"
-											 href="/text2/refuseapply.action?house_id=${apply.house_id}"
+											 href="refuseapply.action?house_id=${apply.house_id}"
 											onclick="return window.confirm('确定要拒绝该租客的申请吗？')">拒绝租赁</a></td>
 										
 											
@@ -120,7 +115,7 @@
 
 					</form>
 </div>
- <script language=javascript>
+<script language=javascript>
 	// 提交分页的查询的表单
 	function to_page(page) {
 		if (page) {
