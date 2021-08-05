@@ -19,17 +19,16 @@ public class UserController {
 	@RequestMapping("/login")
 	public String userList() throws Exception{
 		return "login";
-		
 	}
 	
 	@RequestMapping("/logincheck")
-	public String login(User user,Model model,HttpSession httpSession) throws Exception{
+	public String login(User user, Model model, HttpSession httpSession) throws Exception{
 		
 		User user1=userService.login(user);
 		
-		if(user1!=null){
+		if(user1!=null) {
 			httpSession.setAttribute("user", user1);
-			if(user1.getType().equals("zuke")){
+			if(user1.getType().equals("zuke")) {
 				return "zuke/main";
 			}
 			else{
