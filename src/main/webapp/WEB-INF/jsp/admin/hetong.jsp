@@ -1,17 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/text2/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/text2/css/main.css"/>
-    <script type="text/javascript" src="/text2/js/libs/modernizr.min.js"></script>
-    <script type="text/javascript" src="/text2/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/text2/js/jquery-ui-datepicker.js"></script>
-    <script type="text/javascript" src="/text2/js/jquery.validate.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/text2/css/jquery-ui.css"/>
+<link rel="shortcut icon" href="https://gitee.com/EtherealSymbol/drawing-bed/raw/master/house_lease_sys/favicon.ico"  type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-ui-datepicker.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
+    <!-- 
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jquery-ui.css"/>
+     -->
+    
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webjars/jquery-ui/1.12.1/jquery-ui.css"/>
     <style type="text/css">
     .title{
       margin:10px auto;
@@ -32,7 +43,7 @@
 </head>
 <body>
 <div><br />
-	<form name="hetong" action="/text2/hetong/updatehetong.action">
+	<form name="hetong" action="updatehetong.action">
 	<div class="title">房屋租赁合同</div>
 	<input type="hidden" name="house_id" value="${hetong.house_id}"/>
 	<p>出租方：<span name="chuzu">${hetong.chuzu}</span>（以下简称甲方）；</p>　　　
