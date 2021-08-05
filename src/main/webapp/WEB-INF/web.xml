@@ -65,6 +65,8 @@
 		<url-pattern>*.png</url-pattern>
 		<url-pattern>*.js</url-pattern>
 		<url-pattern>*.css</url-pattern>
+		<url-pattern>*.woff</url-pattern>
+		<url-pattern>*.ttf</url-pattern>
 	</servlet-mapping>
 	<!-- Spring MVC错误页面配置 -->
 	<error-page>
