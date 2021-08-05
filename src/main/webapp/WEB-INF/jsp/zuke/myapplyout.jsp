@@ -9,12 +9,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<base href="<%=basePath%>">
 <meta charset="UTF-8">
 <title>房屋租赁系统</title>
-<link rel="stylesheet" type="text/css" href="/text2/css/common.css" />
-<link rel="stylesheet" type="text/css" href="/text2/css/main.css" />
-<script type="text/javascript" src="/text2/js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="/text2/js/libs/modernizr.min.js"></script>
+<link rel="shortcut icon" href="https://gitee.com/EtherealSymbol/drawing-bed/raw/master/house_lease_sys/favicon.ico"  type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/libs/modernizr.min.js"></script>
 </script>
 <style type="text/css">
 </style>
@@ -32,7 +34,7 @@
 			<h1>退租申请列表</h1>
 		</div>
 		<form id="houseForm" name="houseForm"
-			action="/text2/applyout/getmyapplyout.action" method=post>
+			action="applyout/getmyapplyout.action" method=post>
 			<div class="result-title">
 				<div class="result-list"></div>
 			</div>
@@ -72,7 +74,7 @@
 								    <td> 
 								    <c:if test="${ applyout.status!='申请中'}">
 													<a class="link-update"
-											href="/text2/applyout/deleteapplyout.action?id=${applyout.id}"
+											href="applyout/deleteapplyout.action?id=${applyout.id}"
 											onclick="return window.confirm('确定要删除该记录吗？')"
 											>删除</a>
 											&nbsp;&nbsp; 
