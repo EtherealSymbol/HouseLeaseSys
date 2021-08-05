@@ -9,17 +9,16 @@
 <head>
     <meta charset="UTF-8">
     <title>房屋租赁系统</title>
-    <link rel="stylesheet" type="text/css" href="/text2/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/text2/css/main.css"/>
-    <script type="text/javascript" src="/text2/js/libs/modernizr.min.js"></script>
-    <script type="text/javascript" src="/text2/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/text2/js/jquery-ui-datepicker.js"></script>
-    <script type="text/javascript" src="/text2/js/jquery.validate.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/text2/css/jquery-ui.css"/>
-   <style>
-   
-
-.error {
+	<link rel="shortcut icon" href="https://gitee.com/EtherealSymbol/drawing-bed/raw/master/house_lease_sys/favicon.ico"  type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-ui-datepicker.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webjars/jquery-ui/1.12.1/jquery-ui.css"/>
+   	<style>
+   		.error {
   
   font-size:13px;
   color: red;
@@ -142,9 +141,10 @@
 </div>
 <div class="result-content">
 <div class="sidebar-title">
-        <form action="/text2/hetong/changehetong.action" method="post" id="myform" name="myform" enctype="multipart/form-data" >
+        <form action="changehetong.action" method="post" id="myform" name="myform" enctype="multipart/form-data" >
                     <table class="insert-tab" width="100%">
                         <tbody>
+                        	<tr>
                                 <th><i class="require-red">*</i>房屋id：</th>
                                 <td>
                                     <input class="common-text required" value="${hetong.house_id}" id="house_id" name="house_id" size="50" type="text" readonly>
