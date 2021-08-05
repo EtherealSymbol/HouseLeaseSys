@@ -6,4 +6,3 @@
 *.iml
 target
 *.MF
-src/main/webapp/js/localization/messages_it.js
