@@ -9,17 +9,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<base href="<%=basePath%>">
     <meta charset="UTF-8">
     <title>房屋租赁系统</title>
-    <link rel="stylesheet" type="text/css" href="/text2/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/text2/css/main.css"/>
-    <script type="text/javascript" src="/text2/js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="/text2/js/libs/modernizr.min.js"></script>
-	</script>
-	<style type="text/css">
-	
-	
-	</style>
+	<link rel="shortcut icon" href="https://gitee.com/EtherealSymbol/drawing-bed/raw/master/house_lease_sys/favicon.ico"  type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/libs/modernizr.min.js"></script>
 	
 </head>
 <body>
@@ -29,7 +26,7 @@
 
 <div>
 	<form id="houseForm" name="houseForm"
-		action="/text2/schedule/selectAll.action"
+		action="schedule/selectAll.action"
 		method=post >
 						 <div class="result-title">
                     <div class="result-list">
@@ -60,11 +57,11 @@
 										
 										<td>
 										<a class="link-update"
-											href="/text2/schedule/toupdate.action?id=${schedule.id}">修改</a>
+											href="schedule/toupdate.action?id=${schedule.id}">修改</a>
 											&nbsp;&nbsp; 
 											<input type="hidden" name="id" value="${houselist.id}"/>
 											<a class="link-del"
-											 href="/text2/schedule/deleteschedule.action?id=${schedule.id}"
+											 href="schedule/deleteschedule.action?id=${schedule.id}"
 											 onclick="return window.confirm('确定删除吗？')"
 											>删除</a></td>
 										
