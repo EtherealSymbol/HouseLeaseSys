@@ -1,21 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
    
-   <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>房屋租赁系统</title>
-<link rel="stylesheet" type="text/css" href="/text2/css/styles.css">
+    <link rel="shortcut icon" href="https://gitee.com/EtherealSymbol/drawing-bed/raw/master/house_lease_sys/favicon.ico"  type="image/x-icon"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>房屋租赁系统</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 <div class="wrapper">
-
 	<div class="container">
 		<h1>房屋租赁系统</h1>
 		<form class="form" id="loginform" action="logincheck.action" method="post">
@@ -48,15 +46,13 @@
 	</ul>
 	
 </div>
-
-<script type="text/javascript" src="/text2/js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="/text2/js/jquery.validate.min.js"></script>
-<script type="text/javascript"
-    src="/text2/js/localization/messages_zh.js"></script>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<!-- 
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+ -->
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/localization/messages_zh.js"></script>
 <script type="text/javascript">
-
-
-
 	 $().ready(function() {
         // 在键盘按下并释放及提交后验证提交表单
         $("#loginform").validate({
@@ -95,14 +91,11 @@
         });
     })
 
-var error="${error}";
-if(error=="error"){
-
-alert("帐户名或密码错误");
-}
-
-
-
+	var error="${error}";
+	
+	if(error=="error"){
+		alert("帐户名或密码错误");
+	}
 </script>
 </body>
 </html>
