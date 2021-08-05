@@ -21,13 +21,15 @@ import service.ZulistService;
 @Controller
 @RequestMapping("/zulist")
 public class ZulistController {
+	
 	@Autowired
 	private ZulistService zulistService;
 	@Autowired
 	private UserlistService userlistService;
+	
 	//跳到增添合同的页面
 	@RequestMapping("/toaddhetong")
-	public String toaddhetong(Model model,String house_id){
+	public String toaddhetong(Model model, String house_id){
 		Hetong hetong=new Hetong();
 		hetong.setHouse_id(house_id);
 		model.addAttribute("hetong", hetong);
@@ -35,22 +37,28 @@ public class ZulistController {
 		
 		return "admin/main1";
 	}
+	
 	//管理员查看所有在租列表
 	@RequestMapping("/findzulist")
-	public String findzulist(Model model,@RequestParam(required=false,defaultValue="1") Integer page,
+	public String findzulist(Model model,
+			@RequestParam(required=false,defaultValue="1") Integer page,
             @RequestParam(required=false,defaultValue="2") Integer pageSize) throws Exception{
+		
 		PageHelper.startPage(page, pageSize);
 		List<Zulist> zulist=zulistService.findzuuserlist();
 		PageInfo<Zulist> p=new PageInfo<Zulist>(zulist);
 		model.addAttribute("p", p);
 		model.addAttribute("zulist", zulist);
 		model.addAttribute("mainPage", "zulist.jsp");
+		
 		return "admin/main1";
 	}
 	
 	//查看我的在租列表
 	@RequestMapping("/myzulist")
-	public String myzulist(Model model,HttpSession httpSession,@RequestParam(required=false,defaultValue="1") Integer page,
+	public String myzulist(Model model,
+			HttpSession httpSession,
+			@RequestParam(required=false,defaultValue="1") Integer page,
             @RequestParam(required=false,defaultValue="2") Integer pageSize) throws Exception{
 	
 		User user1= (User) httpSession.getAttribute("user");
