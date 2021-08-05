@@ -11,33 +11,40 @@
 <head>
     <meta charset="UTF-8">
     <title>房屋租赁系统</title>
-    <link rel="stylesheet" type="text/css" href="/text2/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/text2/css/main.css"/>
-    <script type="text/javascript" src="/text2/js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="/text2/js/libs/modernizr.min.js"></script>
-	</script>
-	<style type="text/css">
-	
-	
-	</style>
+	<link rel="shortcut icon" href="https://gitee.com/EtherealSymbol/drawing-bed/raw/master/house_lease_sys/favicon.ico"  type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/libs/modernizr.min.js"></script>
 	<script type="text/javascript">
-	var error="${param.error}";
-	if(error=="zusuccess"){
-
-	alert("该房已租赁，可在租赁列表中查看详情！");
-	}else if(error=="checkoutsuccess"){
-		alert("该合同已被终止！");
-	}
+		var error="${param.error}";
+		if(error=="zusuccess"){
+			("该房已租赁，可在租赁列表中查看详情！");
+		}else if(error=="checkoutsuccess"){
+			alert("该合同已被终止！");
+		}
 		
+		function jump_page(url){
+			var host = window.location.host;
+			if(host.indexOf("localhost")!=1){
+				// 主机是localhost
+				var finalurl = "http://"+host + "/HouseLeaseSys/" + url;
+			}
+			else{
+				var finalurl = host + "/HouseLeaseSys/" + url;
+			}
+			
+			window.location.href = finalurl;
+		}
 	</script>
 </head>
 <body>
 <div>
 <div class="result-title">
-<h1>在租列表</h1>
+	<h1>在租列表</h1>
 </div>
 	<form id="houseForm" name="houseForm"
-		action="/text2/zulist/findzulist.action"
+		action="zulist/findzulist.action"
 		method=post >
 						 <div class="result-title">
                     <div class="result-list">
@@ -73,12 +80,11 @@
 										<td>${zulist.userlist.name}</td>
 										<td>${zulist.userlist.idcard}</td>
 										<td>${zulist.userlist.phone}</td>
-										<td><a class="link-update"
-											href="/text2/hetong/seehetong.action?house_id=${zulist.house_id }">查看合同</a>
+										<td>
+											<a class="link-update" href="javascript:jump_page('hetong/seehetong.action?house_id=${zulist.house_id }');">查看合同</a>
 											&nbsp;&nbsp; 
 											
-											<a class="link-del"
-											 href="/text2/hetong/deletehetong.action?house_id=${zulist.house_id }"
+											<a class="link-del" href="javascript:jump_page('hetong/deletehetong.action?house_id=${zulist.house_id }');"
 											onclick="return window.confirm('确定要终止合同吗？')">终止合同</a></td>
 										
 										
